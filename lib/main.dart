@@ -3,8 +3,15 @@ import 'screens/category_screen.dart';
 import 'services/api_service.dart';
 import 'models/recipe.dart';
 import 'screens/recipe_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() {
+void main () async {
+
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(MyApp());
 }
 
